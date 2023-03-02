@@ -1,0 +1,6 @@
+Per executar el codi cal estar en el directori on es troba el programa energia.jar
+Des d'allà es pot executar la comanda: java -jar energia.jar i seguir les instruccions que indica el propi programa.
+
+**NOTA: Per executar el .jar cal la versió 19 de Java. 
+
+Juntament amb el .jar hem pujat una carpeta amb tots els arxius que hem creat per fer el programa pequè puguin veure els codis i les clases. 

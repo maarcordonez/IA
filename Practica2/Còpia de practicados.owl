@@ -1,0 +1,1196 @@
+@prefix : <http://www.semanticweb.org/carri/ontologies/2022/10/practicados#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/carri/ontologies/2022/10/practicados> .
+
+<http://www.semanticweb.org/carri/ontologies/2022/10/practicados> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#TEnfermedad
+:TEnfermedad rdf:type rdfs:Datatype ;
+             owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                   owl:oneOf [ rdf:type rdf:List ;
+                                               rdf:first "Anemia" ;
+                                               rdf:rest [ rdf:type rdf:List ;
+                                                          rdf:first "Aneurisma" ;
+                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                     rdf:first "Artrosis" ;
+                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                rdf:first "Caidas" ;
+                                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                                           rdf:first "Cancer" ;
+                                                                                           rdf:rest [ rdf:type rdf:List ;
+                                                                                                      rdf:first "Cardiacas" ;
+                                                                                                      rdf:rest [ rdf:type rdf:List ;
+                                                                                                                 rdf:first "Coronarias" ;
+                                                                                                                 rdf:rest [ rdf:type rdf:List ;
+                                                                                                                            rdf:first "Depresion" ;
+                                                                                                                            rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                       rdf:first "Diabetes2" ;
+                                                                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                  rdf:first "Dislipemia" ;
+                                                                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                             rdf:first "Fragilidad" ;
+                                                                                                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                        rdf:first "Hipertension" ;
+                                                                                                                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                   rdf:first "Incontinencia Urinaria" ;
+                                                                                                                                                                                   rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                              rdf:first "Insuficiencia Renal" ;
+                                                                                                                                                                                              rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                                         rdf:first "Obesidad" ;
+                                                                                                                                                                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                                                    rdf:first "Osteoporosis" ;
+                                                                                                                                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                                                                                               rdf:first "Respiratorias" ;
+                                                                                                                                                                                                                               rdf:rest rdf:nil
+                                                                                                                                                                                                                             ]
+                                                                                                                                                                                                                  ]
+                                                                                                                                                                                                       ]
+                                                                                                                                                                                            ]
+                                                                                                                                                                                 ]
+                                                                                                                                                                      ]
+                                                                                                                                                           ]
+                                                                                                                                                ]
+                                                                                                                                     ]
+                                                                                                                          ]
+                                                                                                               ]
+                                                                                                    ]
+                                                                                         ]
+                                                                              ]
+                                                                   ]
+                                                        ]
+                                             ]
+                                 ] .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#TGravedad
+:TGravedad rdf:type rdfs:Datatype ;
+           owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                 owl:oneOf [ rdf:type rdf:List ;
+                                             rdf:first "Leve" ;
+                                             rdf:rest [ rdf:type rdf:List ;
+                                                        rdf:first "Moderada" ;
+                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                   rdf:first "Severa" ;
+                                                                   rdf:rest rdf:nil
+                                                                 ]
+                                                      ]
+                                           ]
+                               ] .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#TIntesidad
+:TIntesidad rdf:type rdfs:Datatype ;
+            owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                  owl:oneOf [ rdf:type rdf:List ;
+                                              rdf:first "Alta" ;
+                                              rdf:rest [ rdf:type rdf:List ;
+                                                         rdf:first "Baja" ;
+                                                         rdf:rest [ rdf:type rdf:List ;
+                                                                    rdf:first "Media" ;
+                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                               rdf:first "Muy Baja" ;
+                                                                               rdf:rest rdf:nil
+                                                                             ]
+                                                                  ]
+                                                       ]
+                                            ]
+                                ] .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#contiene
+:contiene rdf:type owl:ObjectProperty ;
+          rdfs:domain :Sesion ;
+          rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ejercicio_recomendado
+:ejercicio_recomendado rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Enfermedad ;
+                       rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ejercita
+:ejercita rdf:type owl:ObjectProperty ;
+          rdfs:domain :Ejercicio ;
+          rdfs:range :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#formado_por
+:formado_por rdf:type owl:ObjectProperty ;
+             rdfs:domain :Planificacion ;
+             rdfs:range :Sesion .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#hace_ejercicio
+:hace_ejercicio rdf:type owl:ObjectProperty ;
+                rdfs:domain :Persona ;
+                rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#necesita
+:necesita rdf:type owl:ObjectProperty ;
+          rdfs:domain :Ejercicio ;
+          rdfs:range :Instalaciones ,
+                     :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#no_puede_hacer
+:no_puede_hacer rdf:type owl:ObjectProperty ;
+                rdfs:domain :Enfermedad ;
+                rdfs:range :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#puede_ir_a
+:puede_ir_a rdf:type owl:ObjectProperty ;
+            rdfs:domain :Persona ;
+            rdfs:range :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#tiene_enfermedad
+:tiene_enfermedad rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Persona ;
+                  rdfs:range :Enfermedad .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#tiene_material
+:tiene_material rdf:type owl:ObjectProperty ;
+                rdfs:domain :Persona ;
+                rdfs:range :Material .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Altura
+:Altura rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Persona ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#DiasDisponibles
+:DiasDisponibles rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Persona ;
+                 rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Duracion
+:Duracion rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Aerobico ,
+                      :Descanso ,
+                      :Equilibrio ,
+                      :Flexibilidad ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Edad
+:Edad rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Persona ;
+      rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#FrecuenciaCardiaca
+:FrecuenciaCardiaca rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :Persona ;
+                    rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Gravedad
+:Gravedad rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Enfermedad .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#IMC
+:IMC rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdf:type owl:FunctionalProperty ;
+     rdfs:domain :Persona ;
+     rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Intensidad
+:Intensidad rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Aerobico ,
+                        :Fuerza ;
+            rdfs:range :TIntesidad .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Nombre
+:Nombre rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Ejercicio ,
+                    :Persona ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Partes
+:Partes rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Peso
+:Peso rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Material ,
+                  :Persona ;
+      rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Repeticiones
+:Repeticiones rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Equilibrio ,
+                          :Flexibilidad ,
+                          :Fuerza ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Series
+:Series rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :Equilibrio ,
+                    :Flexibilidad ,
+                    :Fuerza ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#TipoEnfermedad
+:TipoEnfermedad rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Enfermedad ;
+                rdfs:range :TEnfermedad .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Aerobico
+:Aerobico rdf:type owl:Class ;
+          rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Descanso
+:Descanso rdf:type owl:Class ;
+          rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Ejercicio
+:Ejercicio rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Enfermedad
+:Enfermedad rdf:type owl:Class ;
+            owl:disjointWith :Persona .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Equilibrio
+:Equilibrio rdf:type owl:Class ;
+            rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Flexibilidad
+:Flexibilidad rdf:type owl:Class ;
+              rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Fuerza
+:Fuerza rdf:type owl:Class ;
+        rdfs:subClassOf :Ejercicio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Instalaciones
+:Instalaciones rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Material
+:Material rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ParteDelCuerpo
+:ParteDelCuerpo rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Persona
+:Persona rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Planificacion
+:Planificacion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Sesion
+:Sesion rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Abdominales
+:Abdominales rdf:type owl:NamedIndividual ,
+                      :Fuerza ;
+             :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Agachadillas
+:Agachadillas rdf:type owl:NamedIndividual ,
+                       :Fuerza ;
+              :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Andar
+:Andar rdf:type owl:NamedIndividual ,
+                :Aerobico ;
+       :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#AndarLigero
+:AndarLigero rdf:type owl:NamedIndividual ,
+                      :Aerobico ;
+             :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#AndarPuntillas
+:AndarPuntillas rdf:type owl:NamedIndividual ,
+                         :Equilibrio ;
+                :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#AndarTalon
+:AndarTalon rdf:type owl:NamedIndividual ,
+                     :Equilibrio ;
+            :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Anemia
+:Anemia rdf:type owl:NamedIndividual ,
+                 :Enfermedad ;
+        rdfs:comment "Severa: No hacer nada Moderada/Leve: Ej suave muy progresivo. No extenuante" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Aneurisma
+:Aneurisma rdf:type owl:NamedIndividual ,
+                    :Enfermedad ;
+           rdfs:comment "No hacer nada" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ApretarHandGrip
+:ApretarHandGrip rdf:type owl:NamedIndividual ,
+                          :Fuerza ;
+                 :ejercita :Brazos ;
+                 :necesita :HandGrip .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Aquagym
+:Aquagym rdf:type owl:NamedIndividual ,
+                  :Aerobico ;
+         :ejercita :Brazos ,
+                   :Cadera ,
+                   :Cuello ,
+                   :Hombros ,
+                   :Piernas ,
+                   :Torso ;
+         :necesita :Piscina .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Artrosis
+:Artrosis rdf:type owl:NamedIndividual ,
+                   :Enfermedad ;
+          :ejercicio_recomendado :Andar ,
+                                 :AndarLigero ,
+                                 :Aquagym ,
+                                 :Baile ,
+                                 :BiciEstatica ,
+                                 :Correr ,
+                                 :Eliptica ,
+                                 :Jardineria ,
+                                 :Natacion ,
+                                 :Patinar ,
+                                 :Remo ,
+                                 :Senderismo ,
+                                 :Taichi ,
+                                 :Tenis ,
+                                 :Yoga ,
+                                 :Zumba .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Baile
+:Baile rdf:type owl:NamedIndividual ,
+                :Aerobico ;
+       :ejercita :Cadera ,
+                 :Hombros ,
+                 :Piernas ,
+                 :Torso .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#BiciEstatica
+:BiciEstatica rdf:type owl:NamedIndividual ,
+                       :Aerobico ;
+              :ejercita :Piernas ;
+              :necesita :BiciEstaticaMaquina .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#BiciEstaticaMaquina
+:BiciEstaticaMaquina rdf:type owl:NamedIndividual ,
+                              :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Brazos
+:Brazos rdf:type owl:NamedIndividual ,
+                 :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Cadera
+:Cadera rdf:type owl:NamedIndividual ,
+                 :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Caidas
+:Caidas rdf:type owl:NamedIndividual ,
+                 :Enfermedad ;
+        :ejercicio_recomendado :Andar ,
+                               :AndarPuntillas ,
+                               :AndarTalon ,
+                               :Aquagym ,
+                               :CaminarLineaRectaPiesJuntos ,
+                               :LevantarseSentarseSillaSinBrazos ,
+                               :SostenerseSobreUnPie ,
+                               :Taichi ,
+                               :Yoga ,
+                               :Zumba ;
+        :no_puede_hacer :AndarLigero ,
+                        :Correr ,
+                        :Patinar ,
+                        :Senderismo ,
+                        :Tenis .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#CaminarLineaRectaPiesJuntos
+:CaminarLineaRectaPiesJuntos rdf:type owl:NamedIndividual ,
+                                      :Equilibrio ;
+                             :ejercita :Piernas ;
+                             rdfs:comment "Camine como si fuese por una línea recta, poniendo un pie delante del otro, juntando el talón del pie de delante con los dedos del pie de atrás" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Caminos
+:Caminos rdf:type owl:NamedIndividual ,
+                  :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#CampoTenis
+:CampoTenis rdf:type owl:NamedIndividual ,
+                     :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Cancer
+:Cancer rdf:type owl:NamedIndividual ,
+                 :Enfermedad ;
+        :ejercicio_recomendado :Andar ,
+                               :BiciEstatica ,
+                               :Correr ,
+                               :MaquinasMusculacion ,
+                               :Natacion ,
+                               :PesasBiceps ,
+                               :PesasHombros ,
+                               :PesasLevantarBrazos ,
+                               :PesasTriceps ,
+                               :Remo ,
+                               :Yoga ;
+        rdfs:comment "5 por  semana y  duracion moderada 3 por semana alta intensidad" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Cardiacas
+:Cardiacas rdf:type owl:NamedIndividual ,
+                    :Enfermedad ;
+           :ejercicio_recomendado :Abdominales ,
+                                  :Agachadillas ,
+                                  :ApretarHandGrip ,
+                                  :ElevacionPiernasLados ,
+                                  :ExtensionCaderas ,
+                                  :ExtensionRodilla ,
+                                  :FlexionCaderas ,
+                                  :FlexionPlantar ,
+                                  :FlexionRodilla ,
+                                  :LevantarseSentarseSilla ,
+                                  :LevantarseSentarseSillaSinBrazos ,
+                                  :MaquinasMusculacion ,
+                                  :PesasBiceps ,
+                                  :PesasHombros ,
+                                  :PesasLevantarBrazos ,
+                                  :PesasTriceps ;
+           :no_puede_hacer :Correr ,
+                           :Eliptica ,
+                           :Patinar ,
+                           :Senderismo ,
+                           :Tenis .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Coronarias
+:Coronarias rdf:type owl:NamedIndividual ,
+                     :Enfermedad ;
+            :ejercicio_recomendado :Andar ,
+                                   :AndarLigero ,
+                                   :Aquagym ,
+                                   :Baile ,
+                                   :BiciEstatica ,
+                                   :Correr ,
+                                   :Eliptica ,
+                                   :Jardineria ,
+                                   :Natacion ,
+                                   :Patinar ,
+                                   :Remo ,
+                                   :Senderismo ,
+                                   :Taichi ,
+                                   :Tenis ,
+                                   :Yoga ,
+                                   :Zumba ;
+            rdfs:comment "aerobico 45-60 min 5 dias a la semana. control freq cardiaca" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Correr
+:Correr rdf:type owl:NamedIndividual ,
+                 :Aerobico ;
+        :ejercita :Piernas ;
+        :necesita :Caminos ,
+                  :Gimnasio ,
+                  :Parque .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Cuello
+:Cuello rdf:type owl:NamedIndividual ,
+                 :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Depresion
+:Depresion rdf:type owl:NamedIndividual ,
+                    :Enfermedad ;
+           :ejercicio_recomendado :Andar ,
+                                  :AndarLigero ,
+                                  :Aquagym ,
+                                  :Baile ,
+                                  :BiciEstatica ,
+                                  :Correr ,
+                                  :Eliptica ,
+                                  :Jardineria ,
+                                  :Natacion ,
+                                  :Patinar ,
+                                  :Remo ,
+                                  :Senderismo ,
+                                  :Taichi ,
+                                  :Tenis ,
+                                  :Yoga ,
+                                  :Zumba .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Diabetes2
+:Diabetes2 rdf:type owl:NamedIndividual ,
+                    :Enfermedad ;
+           :ejercicio_recomendado :Abdominales ,
+                                  :Agachadillas ,
+                                  :ApretarHandGrip ,
+                                  :ElevacionPiernasLados ,
+                                  :ExtensionCaderas ,
+                                  :ExtensionRodilla ,
+                                  :FlexionCaderas ,
+                                  :FlexionPlantar ,
+                                  :FlexionRodilla ,
+                                  :LevantarseSentarseSilla ,
+                                  :LevantarseSentarseSillaSinBrazos ,
+                                  :MaquinasMusculacion ,
+                                  :PesasBiceps ,
+                                  :PesasHombros ,
+                                  :PesasLevantarBrazos ,
+                                  :PesasTriceps .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Dislipemia
+:Dislipemia rdf:type owl:NamedIndividual ,
+                     :Enfermedad ;
+            :ejercicio_recomendado :Andar ,
+                                   :AndarLigero ,
+                                   :Aquagym ,
+                                   :Baile ,
+                                   :BiciEstatica ,
+                                   :Correr ,
+                                   :Eliptica ,
+                                   :Jardineria ,
+                                   :Natacion ,
+                                   :Patinar ,
+                                   :Remo ,
+                                   :Senderismo ,
+                                   :Taichi ,
+                                   :Tenis ,
+                                   :Yoga ,
+                                   :Zumba .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EjerciciosKegel
+:EjerciciosKegel rdf:type owl:NamedIndividual ,
+                          :Equilibrio ;
+                 :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ElevacionPiernasLados
+:ElevacionPiernasLados rdf:type owl:NamedIndividual ,
+                                :Fuerza ;
+                       :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Eliptica
+:Eliptica rdf:type owl:NamedIndividual ,
+                   :Aerobico ;
+          :ejercita :Piernas ;
+          :necesita :MaquinaEliptica .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EscalerasEnCasa
+:EscalerasEnCasa rdf:type owl:NamedIndividual ,
+                          :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoCuadriceps
+:EstiramientoCuadriceps rdf:type owl:NamedIndividual ,
+                                 :Flexibilidad ;
+                        :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoGemelos
+:EstiramientoGemelos rdf:type owl:NamedIndividual ,
+                              :Flexibilidad ;
+                     :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoHombros
+:EstiramientoHombros rdf:type owl:NamedIndividual ,
+                              :Flexibilidad ;
+                     :ejercita :Hombros .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoIsquiotibiales
+:EstiramientoIsquiotibiales rdf:type owl:NamedIndividual ,
+                                     :Flexibilidad ;
+                            :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoMuneca
+:EstiramientoMuneca rdf:type owl:NamedIndividual ,
+                             :Flexibilidad ;
+                    :ejercita :Brazos .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoPantorrillas
+:EstiramientoPantorrillas rdf:type owl:NamedIndividual ,
+                                   :Flexibilidad ;
+                          :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoPectorales
+:EstiramientoPectorales rdf:type owl:NamedIndividual ,
+                                 :Flexibilidad ;
+                        :ejercita :Torso .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoTendonesMuslo
+:EstiramientoTendonesMuslo rdf:type owl:NamedIndividual ,
+                                    :Flexibilidad ;
+                           :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoTobillos
+:EstiramientoTobillos rdf:type owl:NamedIndividual ,
+                               :Flexibilidad ;
+                      :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#EstiramientoTriceps
+:EstiramientoTriceps rdf:type owl:NamedIndividual ,
+                              :Flexibilidad ;
+                     :ejercita :Brazos .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ExtensionCaderas
+:ExtensionCaderas rdf:type owl:NamedIndividual ,
+                           :Fuerza ;
+                  :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#ExtensionRodilla
+:ExtensionRodilla rdf:type owl:NamedIndividual ,
+                           :Fuerza ;
+                  :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#FlexionCaderas
+:FlexionCaderas rdf:type owl:NamedIndividual ,
+                         :Fuerza ;
+                :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#FlexionPlantar
+:FlexionPlantar rdf:type owl:NamedIndividual ,
+                         :Fuerza ;
+                :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#FlexionRodilla
+:FlexionRodilla rdf:type owl:NamedIndividual ,
+                         :Fuerza ;
+                :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Fragilidad
+:Fragilidad rdf:type owl:NamedIndividual ,
+                     :Enfermedad ;
+            :ejercicio_recomendado :Andar ,
+                                   :AndarLigero ,
+                                   :Aquagym ,
+                                   :Baile ,
+                                   :BiciEstatica ,
+                                   :Correr ,
+                                   :Eliptica ,
+                                   :Jardineria ,
+                                   :Natacion ,
+                                   :Patinar ,
+                                   :Remo ,
+                                   :Senderismo ,
+                                   :Taichi ,
+                                   :Tenis ,
+                                   :Yoga ,
+                                   :Zumba .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Gimnasio
+:Gimnasio rdf:type owl:NamedIndividual ,
+                   :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#GirosDeCintura
+:GirosDeCintura rdf:type owl:NamedIndividual ,
+                         :Flexibilidad ;
+                :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#HandGrip
+:HandGrip rdf:type owl:NamedIndividual ,
+                   :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Hipertension
+:Hipertension rdf:type owl:NamedIndividual ,
+                       :Enfermedad ;
+              :ejercicio_recomendado :Abdominales ,
+                                     :Agachadillas ,
+                                     :Andar ,
+                                     :AndarLigero ,
+                                     :ApretarHandGrip ,
+                                     :Aquagym ,
+                                     :Baile ,
+                                     :BiciEstatica ,
+                                     :Correr ,
+                                     :ElevacionPiernasLados ,
+                                     :Eliptica ,
+                                     :ExtensionCaderas ,
+                                     :ExtensionRodilla ,
+                                     :FlexionCaderas ,
+                                     :FlexionPlantar ,
+                                     :FlexionRodilla ,
+                                     :Jardineria ,
+                                     :LevantarseSentarseSilla ,
+                                     :LevantarseSentarseSillaSinBrazos ,
+                                     :MaquinasMusculacion ,
+                                     :Natacion ,
+                                     :Patinar ,
+                                     :PesasBiceps ,
+                                     :PesasHombros ,
+                                     :PesasLevantarBrazos ,
+                                     :PesasTriceps ,
+                                     :Remo ,
+                                     :Senderismo ,
+                                     :Taichi ,
+                                     :Tenis ,
+                                     :Yoga ,
+                                     :Zumba ;
+              rdfs:comment "cuidar mucho la presion en todo momento Si no esta controlada consultar un medico y no hacer nada hasta que el medico diga lo contrario" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Hombros
+:Hombros rdf:type owl:NamedIndividual ,
+                  :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#IncontinenciaUrinaria
+:IncontinenciaUrinaria rdf:type owl:NamedIndividual ,
+                                :Enfermedad ;
+                       :ejercicio_recomendado :AndarPuntillas ,
+                                              :AndarTalon ,
+                                              :CaminarLineaRectaPiesJuntos ,
+                                              :EjerciciosKegel ,
+                                              :LevantarseSentarseSillaSinBrazos ,
+                                              :SostenerseSobreUnPie ,
+                                              :SubirBajarEscaleras .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#InsuficienciaRenal
+:InsuficienciaRenal rdf:type owl:NamedIndividual ,
+                             :Enfermedad ;
+                    :ejercicio_recomendado :Andar ,
+                                           :AndarLigero ,
+                                           :Aquagym ,
+                                           :Baile ,
+                                           :BiciEstatica ,
+                                           :Correr ,
+                                           :Eliptica ,
+                                           :Jardineria ,
+                                           :Natacion ,
+                                           :Patinar ,
+                                           :Remo ,
+                                           :Senderismo ,
+                                           :Taichi ,
+                                           :Tenis ,
+                                           :Yoga ,
+                                           :Zumba .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Jardin
+:Jardin rdf:type owl:NamedIndividual ,
+                 :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Jardineria
+:Jardineria rdf:type owl:NamedIndividual ,
+                     :Aerobico ;
+            :ejercita :Brazos ,
+                      :Cadera ,
+                      :Hombros ,
+                      :Piernas ,
+                      :Torso ;
+            :necesita :Jardin .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#LateralizacionCuello
+:LateralizacionCuello rdf:type owl:NamedIndividual ,
+                               :Flexibilidad ;
+                      :ejercita :Cuello .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#LateralizacionTronco
+:LateralizacionTronco rdf:type owl:NamedIndividual ,
+                               :Flexibilidad ;
+                      :ejercita :Torso .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#LevantarseSentarseSilla
+:LevantarseSentarseSilla rdf:type owl:NamedIndividual ,
+                                  :Fuerza ;
+                         :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#LevantarseSentarseSillaSinBrazos
+:LevantarseSentarseSillaSinBrazos rdf:type owl:NamedIndividual ,
+                                           :Equilibrio ,
+                                           :Fuerza ;
+                                  :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Mancuernas
+:Mancuernas rdf:type owl:NamedIndividual ,
+                     :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#MaquinaEliptica
+:MaquinaEliptica rdf:type owl:NamedIndividual ,
+                          :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#MaquinasMusculacion
+:MaquinasMusculacion rdf:type owl:NamedIndividual ,
+                              :Fuerza ;
+                     :ejercita :Brazos ,
+                               :Cadera ,
+                               :Hombros ,
+                               :Piernas ,
+                               :Torso .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Natacion
+:Natacion rdf:type owl:NamedIndividual ,
+                   :Aerobico ;
+          :ejercita :Brazos ,
+                    :Hombros ,
+                    :Piernas ,
+                    :Torso ;
+          :necesita :Piscina .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Obesidad
+:Obesidad rdf:type owl:NamedIndividual ,
+                   :Enfermedad ;
+          :ejercicio_recomendado :Andar ,
+                                 :AndarLigero ,
+                                 :Aquagym ,
+                                 :Baile ,
+                                 :Taichi ,
+                                 :Tenis ,
+                                 :Yoga ,
+                                 :Zumba .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Osteoporosis
+:Osteoporosis rdf:type owl:NamedIndividual ,
+                       :Enfermedad ;
+              :ejercicio_recomendado :Agachadillas ,
+                                     :Andar ,
+                                     :AndarLigero ,
+                                     :AndarPuntillas ,
+                                     :AndarTalon ,
+                                     :Aquagym ,
+                                     :CaminarLineaRectaPiesJuntos ,
+                                     :ElevacionPiernasLados ,
+                                     :ExtensionCaderas ,
+                                     :ExtensionRodilla ,
+                                     :FlexionCaderas ,
+                                     :FlexionPlantar ,
+                                     :FlexionRodilla ,
+                                     :LevantarseSentarseSillaSinBrazos ,
+                                     :MaquinasMusculacion ,
+                                     :Natacion ,
+                                     :PesasBiceps ,
+                                     :PesasHombros ,
+                                     :PesasLevantarBrazos ,
+                                     :PesasTriceps ,
+                                     :SostenerseSobreUnPie ,
+                                     :SubirBajarEscaleras ;
+              :no_puede_hacer :Correr ,
+                              :Patinar ,
+                              :Senderismo ;
+              rdfs:comment "pesos muy ligeros, que se puedan hacer unas 25 reps facilmente" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Parque
+:Parque rdf:type owl:NamedIndividual ,
+                 :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Patinar
+:Patinar rdf:type owl:NamedIndividual ,
+                  :Aerobico ;
+         :ejercita :Piernas ;
+         :necesita :Caminos ,
+                   :Parque ,
+                   :Patines .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Patines
+:Patines rdf:type owl:NamedIndividual ,
+                  :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#PesasBiceps
+:PesasBiceps rdf:type owl:NamedIndividual ,
+                      :Fuerza ;
+             :ejercita :Brazos ;
+             :necesita :Gimnasio ,
+                       :Mancuernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#PesasHombros
+:PesasHombros rdf:type owl:NamedIndividual ,
+                       :Fuerza ;
+              :ejercita :Hombros ;
+              :necesita :Gimnasio ,
+                        :Mancuernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#PesasLevantarBrazos
+:PesasLevantarBrazos rdf:type owl:NamedIndividual ,
+                              :Fuerza ;
+                     :ejercita :Brazos ,
+                               :Hombros ;
+                     :necesita :Gimnasio ,
+                               :Mancuernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#PesasTriceps
+:PesasTriceps rdf:type owl:NamedIndividual ,
+                       :Fuerza ;
+              :ejercita :Brazos ;
+              :necesita :Gimnasio ,
+                        :Mancuernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Piernas
+:Piernas rdf:type owl:NamedIndividual ,
+                  :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Piscina
+:Piscina rdf:type owl:NamedIndividual ,
+                  :Instalaciones .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#RaquetaTenis
+:RaquetaTenis rdf:type owl:NamedIndividual ,
+                       :Material .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Remo
+:Remo rdf:type owl:NamedIndividual ,
+               :Aerobico ;
+      :ejercita :Brazos ,
+                :Torso ;
+      :necesita :Gimnasio .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Respiratorias
+:Respiratorias rdf:type owl:NamedIndividual ,
+                        :Enfermedad ;
+               :ejercicio_recomendado :Andar ,
+                                      :AndarLigero ,
+                                      :Aquagym ,
+                                      :Baile ,
+                                      :BiciEstatica ,
+                                      :Jardineria ,
+                                      :Taichi ,
+                                      :Yoga ,
+                                      :Zumba ;
+               :no_puede_hacer :Abdominales ,
+                               :Agachadillas ,
+                               :Correr ,
+                               :Eliptica ,
+                               :FlexionPlantar ,
+                               :MaquinasMusculacion ,
+                               :Patinar ,
+                               :PesasHombros ,
+                               :PesasLevantarBrazos ,
+                               :Senderismo ,
+                               :Tenis ;
+               rdfs:comment "nunca agotarse, parar antes" .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#RotacionDobleCadera
+:RotacionDobleCadera rdf:type owl:NamedIndividual ,
+                              :Flexibilidad ;
+                     :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#RotacionHombro
+:RotacionHombro rdf:type owl:NamedIndividual ,
+                         :Flexibilidad ;
+                :ejercita :Hombros .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#RotacionSimpleCadera
+:RotacionSimpleCadera rdf:type owl:NamedIndividual ,
+                               :Flexibilidad ;
+                      :ejercita :Cadera .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Senderismo
+:Senderismo rdf:type owl:NamedIndividual ,
+                     :Aerobico ;
+            :ejercita :Piernas ;
+            :necesita :Caminos .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#SostenerseSobreUnPie
+:SostenerseSobreUnPie rdf:type owl:NamedIndividual ,
+                               :Equilibrio ;
+                      :ejercita :Piernas .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#SubirBajarEscaleras
+:SubirBajarEscaleras rdf:type owl:NamedIndividual ,
+                              :Equilibrio ;
+                     :ejercita :Piernas ;
+                     :necesita :EscalerasEnCasa .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Taichi
+:Taichi rdf:type owl:NamedIndividual ,
+                 :Aerobico .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Tenis
+:Tenis rdf:type owl:NamedIndividual ,
+                :Aerobico ;
+       :ejercita :Brazos ;
+       :necesita :CampoTenis ,
+                 :RaquetaTenis .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Torso
+:Torso rdf:type owl:NamedIndividual ,
+                :ParteDelCuerpo .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Yoga
+:Yoga rdf:type owl:NamedIndividual ,
+               :Aerobico ,
+               :Flexibilidad .
+
+
+###  http://www.semanticweb.org/carri/ontologies/2022/10/practicados#Zumba
+:Zumba rdf:type owl:NamedIndividual ,
+                :Aerobico .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ejercicio
+                :Enfermedad
+                :Instalaciones
+                :Persona
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ejercicio
+                :Enfermedad
+                :Material
+                :Persona
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ejercicio
+                :Enfermedad
+                :Persona
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

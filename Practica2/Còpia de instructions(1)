@@ -1,0 +1,5 @@
+(clear)
+(load "practicados.clp")
+(load "modudos.clp")
+(reset)
+(run)
